@@ -8,9 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController {
+    IBOutlet UILabel *workSeconds;
+    IBOutlet UILabel *breakSeconds;
+    NSTimer* timer;
+    int workInt;
+    int breakInt;
+    bool rest;
+    bool start;
+    NSMutableArray *tableArray;
+}
 
 @property (strong, nonatomic) id detailItem;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (strong, nonatomic) NSDate* workTime;
+@property (strong, nonatomic) NSDate* breakTime;
+
+-(IBAction)start:(id)sender;
+-(void) countUp;
+
+
 @end
